@@ -5,23 +5,26 @@ import {Header} from "./components/Header";
 import {Watchlist} from "./components/Watchlist";
 import {Watched} from "./components/Watched";
 import {Add} from "./components/Add";
+import {GlobalProvider} from "./components/context/GlobalState";
 
 function App() {
     return (
-        <Router>
-            <Header/>
-            <Switch>
-                <Route exact path="/">
-                    <Watchlist/>
-                </Route>
-                <Route exact path="/watched">
-                    <Watched/>
-                </Route>
-                <Route exact path="/add">
-                    <Add/>
-                </Route>
-            </Switch>
-        </Router>
+        <GlobalProvider>
+            <Router>
+                <Header/>
+                <Switch>
+                    <Route exact path="/">
+                        <Watchlist/>
+                    </Route>
+                    <Route exact path="/watched">
+                        <Watched/>
+                    </Route>
+                    <Route exact path="/add">
+                        <Add/>
+                    </Route>
+                </Switch>
+            </Router>
+        </GlobalProvider>
     );
 }
 

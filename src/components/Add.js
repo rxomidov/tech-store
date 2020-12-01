@@ -5,7 +5,7 @@ export const Add = () => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
     const onChange = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         setQuery(e.target.value);
 
@@ -21,7 +21,7 @@ language=en-US&page=1&include_adult=false&query=${e.target.value}`)
                 }
                 //console.log(data)
             })
-    }
+    };
 
     return (
         <div className="add-page">
